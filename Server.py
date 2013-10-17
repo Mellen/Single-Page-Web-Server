@@ -14,10 +14,10 @@ Server: Single Page Web Server
 
 
 """
-        self.send(header)
+        self.send(header.encode('utf-8')
         with open(self.__filename, 'r') as index_file:
             content = index_file.read()
-            self.send(content)
+            self.send(content.encode('utf-8'))
         self.close()
 
 class Server(asyncore.dispatcher):
